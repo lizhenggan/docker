@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  nginx:
+    image: nginx:stable
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./vhost:/etc/nginx/conf.d
+      - ../bhj_dev:/var/www/html
+    links:
+      - phpfpm
+
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: qazasdedc123
+    ports:
+      - "3306:3306"
+
+  redis:
+    image: redis:3.2.9-alpine
+    ports:
+      - "6379:6379"
+
+  phpfpm:
+    build: ./php-fpm5.6
+    volumes:
+      - ../bhj_dev:/var/www/html
+      - ../paycert:/home/paycert
+    ports:
+      - "9000"
