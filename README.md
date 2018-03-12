@@ -7,7 +7,7 @@ cd 到本地目录
 
 目前挂载目录在
 ```
-../bhj_PHP
+../Code
 ```
 你可以在docker-compose.yml 中修改挂载配置
 
