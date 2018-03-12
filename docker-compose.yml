@@ -27,7 +27,7 @@ services:
   phpfpm:
     build: ./php-fpm5.6
     volumes:
-      - ../bhj_dev:/var/www/html
+      - ../Code:/var/www/html
       - ../paycert:/home/paycert
     ports:
       - "9000"
