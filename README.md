@@ -21,3 +21,18 @@ docker-compose up -d
 ```
 就这样 你就拥有了 PHP5.6 + redis + mysql5.6 + nginx 的环境
 
+# 配置swoole
+cd 到swoole目录执行
+```
+bash ./build.sh
+```
+
+docker-compose.yml 配置
+```
+  swoole:
+    image: swoole-server:0.1
+    ports: 
+        - "8080:8080"
+    volumes:
+        - /var/www:/var/www/html
+```
