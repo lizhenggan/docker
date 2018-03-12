@@ -1,7 +1,7 @@
 ## 使用说明
 
 ```
-git clone https://git.oschina.net/chnkarl/bhj_env.git
+克隆项目
 cd bhj_env
 docker-compose up -d
 ```
